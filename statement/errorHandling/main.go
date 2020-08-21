@@ -15,12 +15,12 @@ func main() {
 	data := make([]byte, 100)
 	count, err := file.Read(data)
 	if err != nil {
-		log.Fatalln("Error")
+		log.Fatalln("Error for file")
 	}
 	fmt.Println(count, string(data))
 
 	err = os.Chdir("test")
 	if err != nil {
-		log.Fatalln("Error")
+		log.Fatalln("Error for test")
 	}
 }

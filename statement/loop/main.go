@@ -19,10 +19,16 @@ func main() {
 		sum += sum
 		fmt.Println(sum)
 	}
+	fmt.Println(sum, "sum")
 
 	arr := []string{"python", "go", "react"}
+	fmt.Println(arr)
 	for i := 0; i < len(arr); i++ {
 		fmt.Println(i, arr[i])
+	}
+
+	for _, v := range arr {
+		fmt.Println(v)
 	}
 	for j, v := range arr {
 		fmt.Println(j, v)

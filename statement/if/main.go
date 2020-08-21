@@ -31,4 +31,8 @@ func main() {
 	if result == "ok" {
 		fmt.Println("great")
 	}
+
+	if result2 := by2num(10); result2 == "ok" {
+		fmt.Println("great2")
+	}
 }

@@ -20,6 +20,7 @@ func main() {
 		fmt.Println("Default!")
 	}
 
+	// こちらのパターンでは、変数osはswitch内のみ参照可能
 	switch os := getOsName(); os {
 	case "mac":
 		fmt.Println("Mac")
