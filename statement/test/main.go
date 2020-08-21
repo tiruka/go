@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func test1() {
 	l := []int{100, 300, 23, 11, 2, 4, 6, 4}
@@ -11,6 +14,19 @@ func test1() {
 		}
 	}
 	fmt.Println(MIN)
+	M := 10000
+	for _, v := range l {
+		if v < M {
+			M = v
+		}
+	}
+	fmt.Println(M)
+
+	m := 10000
+	for _, v := range l {
+		m = int(math.Min(float64(m), float64(v)))
+	}
+	fmt.Println(m)
 }
 
 func test2() {
@@ -24,6 +40,7 @@ func test2() {
 	}
 
 	var sum int = 0
+	// sum := 0
 	for _, v := range m {
 		sum += v
 	}
