@@ -64,6 +64,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 	err := p.save()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 	http.Redirect(w, r, "/view/"+title, http.StatusFound)
 }
