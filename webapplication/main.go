@@ -2,7 +2,6 @@ package main
 
 // https://golang.org/doc/articles/wiki/
 import (
-	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -46,7 +45,6 @@ func viewHandler(w http.ResponseWriter, r *http.Request, title string) {
 		http.Redirect(w, r, "/edit/"+title, http.StatusFound)
 		return
 	}
-	// fmt.Fprintf(w, "<h1>%s</h1><div>%s</div>", p.Title, p.Body)
 	renderTemplate(w, "view", p)
 }
 
@@ -83,10 +81,10 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 }
 
 func main() {
-	p1 := &Page{Title: "test", Body: []byte("This is a sample page")}
-	p1.save()
-	p2, _ := loadPage("test")
-	fmt.Println(p2.Title, string(p2.Body))
+	// p1 := &Page{Title: "test", Body: []byte("This is a sample page")}
+	// p1.save()
+	// p2, _ := loadPage("test")
+	// fmt.Println(p2.Title, string(p2.Body))
 	http.HandleFunc("/view/", makeHandler(viewHandler))
 	http.HandleFunc("/edit/", makeHandler(editHandler))
 	http.HandleFunc("/save/", makeHandler(saveHandler))
